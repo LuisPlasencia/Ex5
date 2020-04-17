@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Letters &amp; Numbers</string>
+    <string name="numbers_title">Numbers</string>
+    <string name="letters_title">Letters</string>
+</resources>
