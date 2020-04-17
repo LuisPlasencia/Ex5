@@ -3,6 +3,7 @@ package es.ulpgc.eite.cleancode.lettersandnumbers.numbers;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 
 import es.ulpgc.eite.cleancode.lettersandnumbers.app.LettersToNumbersState;
 import es.ulpgc.eite.cleancode.lettersandnumbers.data.NumberData;
@@ -63,6 +64,7 @@ public class NumberListPresenter implements NumberListContract.Presenter {
 
     // call the model and update the state
     state.data = model.getStoredData();
+    state.datasource = new ArrayList<>();
 
     // update the view
     view.get().onDataUpdated(state);
@@ -76,6 +78,7 @@ public class NumberListPresenter implements NumberListContract.Presenter {
 
   @Override
   public void onPause() {
+    model.onDataFromNextScreen(state.data);
     // Log.e(TAG, "onPause()");
   }
 
@@ -94,7 +97,10 @@ public class NumberListPresenter implements NumberListContract.Presenter {
      Log.e(TAG, "onClickNumberListButton()");
      NumberData numero = new NumberData();
      numero.number = state.number;
+     numero.id = state.id;
+     state.id ++;
      state.number++;
+
      state.datasource.add(numero);
      view.get().onDataUpdated(state);
   }

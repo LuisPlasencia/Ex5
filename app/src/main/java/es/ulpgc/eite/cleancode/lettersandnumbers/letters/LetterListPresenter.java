@@ -78,6 +78,7 @@ public class LetterListPresenter implements LetterListContract.Presenter {
 
   @Override
   public void onPause() {
+    model.onDataFromNextScreen(state.data);
     // Log.e(TAG, "onPause()");
   }
 
@@ -99,19 +100,25 @@ public class LetterListPresenter implements LetterListContract.Presenter {
   public void onClickLetterListButton() {
     Log.e(TAG, "onClickLetterListButton()");
     LetterData letter = new LetterData();
+    Log.e("LetterListPresenter", String.valueOf(state.data));
     if (state.data.equals("A")){
       state.data = "B";
     } else if(state.data.equals("B")){
       state.data = "C";
     } else if(state.data.equals("C")){
       state.data = "D";
+    }  else if(state.data.equals("D")){
+        state.data = "E";
+    } else if(state.data.equals("E")){
+        state.data = "F";
     } else{
       state.data = "A";
     }
+
     letter.letter = state.data;
+
     state.datasource.add(letter);
     view.get().onDataUpdated(state);
-
   }
 
   @Override

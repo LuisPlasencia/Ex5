@@ -4,4 +4,5 @@ public class NumberListState extends NumberListViewModel {
 
   // put the model state here
     int number = 0;
+    long id = 0;
 }

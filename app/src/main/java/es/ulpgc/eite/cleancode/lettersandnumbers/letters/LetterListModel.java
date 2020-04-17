@@ -19,15 +19,19 @@ public class LetterListModel implements LetterListContract.Model {
   @Override
   public void onRestartScreen(String data) {
     // Log.e(TAG, "onRestartScreen()");
+
+    this.data = data;
   }
 
   @Override
   public void onDataFromNextScreen(String data) {
     // Log.e(TAG, "onDataFromNextScreen()");
+    this.data = data;
   }
 
   @Override
   public void onDataFromPreviousScreen(String data) {
     // Log.e(TAG, "onDataFromPreviousScreen()");
+    this.data = data;
   }
 }
