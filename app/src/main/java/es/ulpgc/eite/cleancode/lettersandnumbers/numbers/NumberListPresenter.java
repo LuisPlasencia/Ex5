@@ -1,5 +1,7 @@
 package es.ulpgc.eite.cleancode.lettersandnumbers.numbers;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.lettersandnumbers.app.LettersToNumbersState;
@@ -84,12 +86,17 @@ public class NumberListPresenter implements NumberListContract.Presenter {
 
   @Override
   public void onClickNumberListCell(NumberData data) {
-    // Log.e(TAG, "onClickNumberListCell()");
+     Log.e(TAG, "onClickNumberListCell()");
   }
 
   @Override
   public void onClickNumberListButton() {
-    // Log.e(TAG, "onClickNumberListButton()");
+     Log.e(TAG, "onClickNumberListButton()");
+     NumberData numero = new NumberData();
+     numero.number = state.number;
+     state.number++;
+     state.datasource.add(numero);
+     view.get().onDataUpdated(state);
   }
 
   @Override

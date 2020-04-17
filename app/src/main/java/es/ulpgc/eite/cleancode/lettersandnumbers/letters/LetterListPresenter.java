@@ -1,5 +1,7 @@
 package es.ulpgc.eite.cleancode.lettersandnumbers.letters;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.lettersandnumbers.app.NumbersToLettersState;
@@ -85,12 +87,12 @@ public class LetterListPresenter implements LetterListContract.Presenter {
 
   @Override
   public void onClickLetterListCell(LetterData data) {
-    // Log.e(TAG, "onClickLetterListCell()");
+     Log.e(TAG, "onClickLetterListCell()");
   }
 
   @Override
   public void onClickLetterListButton() {
-    // Log.e(TAG, "onClickLetterListButton()");
+     Log.e(TAG, "onClickLetterListButton()");
   }
 
   @Override

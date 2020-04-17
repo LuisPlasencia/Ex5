@@ -6,6 +6,8 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
 import es.ulpgc.eite.cleancode.lettersandnumbers.R;
 import es.ulpgc.eite.cleancode.lettersandnumbers.data.NumberData;
 
@@ -15,12 +17,14 @@ public class NumberListActivity
   public static String TAG = NumberListActivity.class.getSimpleName();
 
   private NumberListContract.Presenter presenter;
+  private NumberListAdapter listAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_number_list);
     getSupportActionBar().setTitle(R.string.numbers_title);
+
 
     // do the setup
     NumberListScreen.configure(this);
