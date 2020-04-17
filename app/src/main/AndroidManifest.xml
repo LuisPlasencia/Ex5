@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".letters.LetterListActivity"/>
+        <activity android:name=".numbers.NumberListActivity"/>
 
-        <activity android:name=".numbers.NumberListActivity">
+        <activity android:name=".letters.LetterListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,7 +1,5 @@
 package es.ulpgc.eite.cleancode.lettersandnumbers.letters;
 
-import android.util.Log;
-
 public class LetterListModel implements LetterListContract.Model {
 
   public static String TAG = LetterListModel.class.getSimpleName();

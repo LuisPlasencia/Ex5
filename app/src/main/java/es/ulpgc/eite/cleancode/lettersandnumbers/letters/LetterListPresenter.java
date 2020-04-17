@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.eite.cleancode.lettersandnumbers.app.LettersToNumbersState;
 import es.ulpgc.eite.cleancode.lettersandnumbers.app.NumbersToLettersState;
 import es.ulpgc.eite.cleancode.lettersandnumbers.data.LetterData;
 
@@ -87,12 +88,30 @@ public class LetterListPresenter implements LetterListContract.Presenter {
 
   @Override
   public void onClickLetterListCell(LetterData data) {
-     Log.e(TAG, "onClickLetterListCell()");
+    Log.e(TAG, "onClickLetterListCell()");
+    LettersToNumbersState state = new LettersToNumbersState();
+    state.data = this.state.data;
+    router.passStateToNextScreen(state);
+    router.navigateToNextScreen();
   }
 
   @Override
   public void onClickLetterListButton() {
-     Log.e(TAG, "onClickLetterListButton()");
+    Log.e(TAG, "onClickLetterListButton()");
+    LetterData letter = new LetterData();
+    if (state.data.equals("A")){
+      state.data = "B";
+    } else if(state.data.equals("B")){
+      state.data = "C";
+    } else if(state.data.equals("C")){
+      state.data = "D";
+    } else{
+      state.data = "A";
+    }
+    letter.letter = state.data;
+    state.datasource.add(letter);
+    view.get().onDataUpdated(state);
+
   }
 
   @Override

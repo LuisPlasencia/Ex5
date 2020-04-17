@@ -6,8 +6,6 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
-
 import es.ulpgc.eite.cleancode.lettersandnumbers.R;
 import es.ulpgc.eite.cleancode.lettersandnumbers.data.NumberData;
 

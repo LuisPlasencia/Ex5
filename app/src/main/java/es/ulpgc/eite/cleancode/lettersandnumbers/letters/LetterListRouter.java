@@ -6,6 +6,7 @@ import android.content.Intent;
 import es.ulpgc.eite.cleancode.lettersandnumbers.app.AppMediator;
 import es.ulpgc.eite.cleancode.lettersandnumbers.app.LettersToNumbersState;
 import es.ulpgc.eite.cleancode.lettersandnumbers.app.NumbersToLettersState;
+import es.ulpgc.eite.cleancode.lettersandnumbers.numbers.NumberListActivity;
 
 public class LetterListRouter implements LetterListContract.Router {
 
@@ -20,7 +21,7 @@ public class LetterListRouter implements LetterListContract.Router {
   @Override
   public void navigateToNextScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, LetterListActivity.class);
+    Intent intent = new Intent(context, NumberListActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }
